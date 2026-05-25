@@ -77,51 +77,54 @@ export function ToolPage({
   ];
 
   return (
-    <Container className="py-10">
+    <Container className="py-10 lg:py-14">
       <JsonLd data={jsonLd} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article className="min-w-0">
-          <section>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-950">
+          <section className="rounded-lg border border-stone-200/80 bg-white/75 p-6 shadow-xl shadow-stone-950/[0.04] ring-1 ring-white/70 sm:p-8">
+            <p className="text-sm font-bold uppercase tracking-wide text-amber-700">
+              Free academic calculator
+            </p>
+            <h1 className="mt-3 text-4xl font-black tracking-tight text-stone-950 sm:text-5xl">
               {title}
             </h1>
-            <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-stone-700">
               {intro}
             </p>
           </section>
 
           <section className="mt-8">{children}</section>
 
-          <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-slate-950">
+          <section className="mt-10 rounded-lg border border-stone-200 bg-white/85 p-6 shadow-lg shadow-stone-950/[0.03]">
+            <h2 className="text-2xl font-black text-stone-950">
               How this calculator works
             </h2>
-            <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-slate-700">
+            <ol className="mt-4 list-decimal space-y-2 pl-5 leading-7 text-stone-700 marker:font-bold marker:text-amber-700">
               {howItWorks.map((step) => (
                 <li key={step}>{step}</li>
               ))}
             </ol>
           </section>
 
-          <section className="mt-6 rounded-lg border border-slate-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-slate-950">Formula</h2>
-            <pre className="mt-4 overflow-x-auto rounded-md bg-slate-950 p-4 text-sm text-white">
+          <section className="mt-6 rounded-lg border border-stone-200 bg-white/85 p-6 shadow-lg shadow-stone-950/[0.03]">
+            <h2 className="text-2xl font-black text-stone-950">Formula</h2>
+            <pre className="mt-4 overflow-x-auto rounded-md bg-stone-950 p-4 text-sm text-amber-50">
               <code>{formula}</code>
             </pre>
           </section>
 
-          <section className="mt-6 rounded-lg border border-slate-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-slate-950">Example</h2>
-            <p className="mt-3 leading-7 text-slate-700">{example}</p>
+          <section className="mt-6 rounded-lg border border-stone-200 bg-white/85 p-6 shadow-lg shadow-stone-950/[0.03]">
+            <h2 className="text-2xl font-black text-stone-950">Example</h2>
+            <p className="mt-3 leading-7 text-stone-700">{example}</p>
           </section>
 
-          <section className="mt-6 rounded-lg border border-slate-200 bg-white p-6">
-            <h2 className="text-2xl font-bold text-slate-950">
+          <section className="mt-6 rounded-lg border border-stone-200 bg-white/85 p-6 shadow-lg shadow-stone-950/[0.03]">
+            <h2 className="text-2xl font-black text-stone-950">
               What the result means
             </h2>
-            <p className="mt-3 leading-7 text-slate-700">{resultMeaning}</p>
+            <p className="mt-3 leading-7 text-stone-700">{resultMeaning}</p>
             {limitations ? (
-              <p className="mt-3 leading-7 text-slate-700">{limitations}</p>
+              <p className="mt-3 leading-7 text-stone-700">{limitations}</p>
             ) : null}
           </section>
 
@@ -129,8 +132,8 @@ export function ToolPage({
           <RelatedTools tools={relatedTools} />
         </article>
 
-        <aside className="rounded-lg border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-700 lg:sticky lg:top-6 lg:self-start">
-          <h2 className="font-semibold text-slate-950">Privacy note</h2>
+        <aside className="rounded-lg border border-stone-800 bg-stone-950 p-5 text-sm leading-6 text-stone-200 shadow-2xl shadow-stone-950/10 lg:sticky lg:top-24 lg:self-start">
+          <h2 className="font-bold text-white">Privacy note</h2>
           <p className="mt-2">
             Your inputs are calculated in the browser. This MVP does not save
             your grades to a server or require an account.
