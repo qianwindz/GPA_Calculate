@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { siteConfig } from '@/lib/seo/site';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     'Free GPA, grade, final exam, and GPA conversion calculators for students.',
-  metadataBase: new URL('https://example.com')
+  metadataBase: new URL(siteConfig.url)
 };
 
 export default function RootLayout({

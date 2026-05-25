@@ -3,6 +3,7 @@ import { Container } from '@/components/layout/Container';
 import { FaqSection, type FaqItem } from '@/components/seo/FaqSection';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { RelatedTools } from '@/components/seo/RelatedTools';
+import { absoluteUrl } from '@/lib/seo/site';
 
 type RelatedTool = {
   title: string;
@@ -22,8 +23,6 @@ type ToolPageProps = {
   relatedTools: RelatedTool[];
   path: string;
 };
-
-const siteUrl = 'https://example.com';
 
 export function ToolPage({
   children,
@@ -45,7 +44,7 @@ export function ToolPage({
       name: title,
       applicationCategory: 'EducationalApplication',
       operatingSystem: 'Any',
-      url: `${siteUrl}${path}`,
+      url: absoluteUrl(path),
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
     },
     {
@@ -65,13 +64,13 @@ export function ToolPage({
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: siteUrl
+          item: absoluteUrl('/')
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: title,
-          item: `${siteUrl}${path}`
+          item: absoluteUrl(path)
         }
       ]
     }

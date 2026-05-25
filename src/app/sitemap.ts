@@ -1,12 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { publicRoutes } from '@/content/tools';
+import { absoluteUrl } from '@/lib/seo/site';
 
-const siteUrl = 'https://example.com';
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date('2026-05-25');
+
   return publicRoutes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
+    url: absoluteUrl(route),
+    lastModified,
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
     priority: route === '/' ? 1 : 0.8
   }));
